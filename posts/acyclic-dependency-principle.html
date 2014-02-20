@@ -8,7 +8,7 @@
     <title>去除循環相依性 | Oliver Kang</title>
     
             <link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-    <link rel="canonical" href="http://getnikola.com/posts/acyclic-dependency-principle.html">
+    <link rel="canonical" href="#">
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
@@ -33,7 +33,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="http://getnikola.com/">Oliver Kang</a>
+        <a class="navbar-brand" href="../">Oliver Kang</a>
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
@@ -83,12 +83,13 @@
     <div><p>-模組間依賴關係應維持單向相依，若出現循環相依，會造成系統編譯建置上的困難。</p>
 <p>如下圖，Ｄ是Ｂ的底層，Ｂ是Ａ和Ｃ的底層，Ｃ是Ａ的底層。底層若變動，依賴於它的模組可能要隨著調整並重新編譯。因此當Ｄ變動則調整Ａ、Ｂ、Ｃ並全部重新編譯; 當Ｃ異動，則只有Ａ受影響需要重新編譯; 如果只有Ａ異動，那很好，沒有模組受影響，只要編譯Ａ就好。如此，我們限縮了異動影響範圍。</p>
 <img alt="/img/img_adp_acycle0.png" src="../img/img_adp_acycle0.png">
-<!-- TEASER_END: (繼續閱讀...) -->
 <div class="line-block">
 <div class="line"><br></div>
 <div class="line"><br></div>
 </div>
-<p>但如果出現循環相依，就不是這樣了。如下圖，當Ａ異動，因為D依賴Ａ，因此Ｄ要調整並重新編譯，連帶的Ｂ、Ｃ也要一起調整並編譯。我只是改了Ａ，但整張圖都受影響，所有模組都需要重新編譯。系統建置變複雜了，可維護性變差了。</p>
+<p>但如果出現循環相依，就不是這樣了。</p>
+<!-- TEASER_END: (繼續閱讀...) -->
+<p>如下圖，當Ａ異動，因為D依賴Ａ，因此Ｄ要調整並重新編譯，連帶的Ｂ、Ｃ也要一起調整並編譯。我只是改了Ａ，但整張圖都受影響，所有模組都需要重新編譯。系統建置變複雜了，可維護性變差了。</p>
 <img alt="/img/img_adp_cycle.png" src="../img/img_adp_cycle.png">
 <div class="line-block">
 <div class="line"><br></div>
@@ -120,7 +121,7 @@
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="nikolademo",
-            disqus_url="http://getnikola.com/posts/acyclic-dependency-principle.html",
+            disqus_url="/posts/acyclic-dependency-principle.html",
         disqus_title="\u53bb\u9664\u5faa\u74b0\u76f8\u4f9d\u6027",
         disqus_identifier="cache/posts/acyclic-dependency-principle.html",
         disqus_config = function () {
